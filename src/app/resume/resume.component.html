@@ -1,0 +1,87 @@
+<div class="container-fluid siteRez mb-5" *ngIf="!printable else print">
+  <div class="d-flex justify-content-center">
+    <div class="img-wrapper">
+      <img [src]="src" class="me">
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <div width="200" class="text-center">
+      <div class="name">Alec B. Geibig</div>
+      <div class="job">Software Engineer</div>
+      <div class="contact mt-1">Cell: 814-242-3741</div>
+      <div class="contact">Email: alecbgeibig@gmail.com</div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+      <app-title title="about me"></app-title>
+      <p class="shrink-mobile">
+        I am a highly driven and communicative software engineer with a desire to learn as much as possible.
+        I pride myself on my ability to find clever yet elegant solutions to problems. 
+        I have worked on a number of projects ranging from mobile development to SCADA engineering. 
+        I am a quick learner and I am always willing to meet demands and learn new technologies.
+      </p>
+      <p class="shrink-mobile">
+        I also really enjoy working on personal projects in my free time, and for those interested, this site is 
+        written in MEAN stack and is hosted on a Ubuntu droplet. The server is using NGINX as a reverse proxy to point 
+        multiple subdomains to different clients that I've set up.
+      </p>
+      <p class="shrink-mobile">
+        Outside of my career, my personal interests include working out, cooking, the outdoors,
+          and my family and friends.
+      </p>
+      <p class="shrink-mobile">
+        Click <a class="bd-highlight pointer" (click)="getResume()">this link</a> if you want to download an actual PDF of my resume, otherwise scroll down to view
+        the web version I've made of it.
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row mb-5">
+    <div class="col-lg-6 col-md-6 col-sm-11 col-12 pl-5">
+      <app-title icon="fas fa-graduation-cap" title="education"></app-title>
+      <app-work-experience *ngFor="let x of school" [data]="x" [site]="true"></app-work-experience>
+      <app-title icon="fas fa-briefcase" title="job history"></app-title>
+      <app-work-experience *ngFor="let x of work" [data]="x" [site]="true"></app-work-experience>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-1"></div>
+    <div class="col-lg-5 col-md-5 col-sm-11 col-12">
+      <div *ngFor="let x of skills">
+        <app-title [title]="x?.name"></app-title>
+        <app-skill-row *ngFor="let y of x?.arr" [skills]="y?.skills" [level]="y?.level"></app-skill-row>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #print>
+  <div class="p-3 w-100 no-scroll">
+    <div class="row">
+        <div class="col">
+          <app-header></app-header>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-6 col-md-6 col-sm-11 col-12 pl-5 pr-1">
+          <app-title icon="fas fa-graduation-cap" title="education"></app-title>
+          <app-work-experience *ngFor="let x of school" [data]="x"></app-work-experience>
+          <app-title icon="fas fa-briefcase" title="job history"></app-title>
+          <app-work-experience *ngFor="let x of work" [data]="x"></app-work-experience>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-1"></div>
+        <div class="col-lg-5 col-md-5 col-sm-11 col-12">
+          <app-title title="about me"></app-title>
+          <p class="pl-2">
+            I am a highly driven and communicative software engineer with an incredible desire to learn as much as possible.
+            I pride myself on my ability to find clever yet elegant solutions to problems. 
+            I have worked on a number of projects ranging from mobile development to SCADA engineering. 
+            I am a quick learner and I am always willing to meet demands and learn new technologies.
+          </p>
+          <ng-container *ngFor="let x of skills">
+            <app-title [title]="x?.name"></app-title>
+            <app-skill-row *ngFor="let y of x?.arr" [skills]="y?.skills" [level]="y?.level"></app-skill-row>
+          </ng-container>
+        </div>
+    </div>
+  </div>
+</ng-template>

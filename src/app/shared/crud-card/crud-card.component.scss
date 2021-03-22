@@ -1,0 +1,73 @@
+.crud-card {
+    box-shadow: 0 0 12px lightgrey;
+    border:none;
+    .crud-card-header {
+        text-transform: uppercase;
+        padding: 0.2rem 0.4rem;
+        background-color:white;
+        border:none;
+        position: relative;
+        // background-color: lightgrey;
+        >.icon-target {
+            position: absolute;
+            font-size: 1.5rem;
+            top: -0.4rem;
+            right: -0.4rem;
+            height: 35px;
+            width: 100%;
+            cursor: pointer;
+            >i {
+                position: absolute;
+                top: 25%;
+                right: 5%;
+                transform: rotate(0deg);
+                transition: transform 0.3s linear;
+                &:active {
+                    top:0.7rem
+                }
+                &.open {
+                    transform: rotate(180deg);
+                    transition: transform 0.2s linear;
+                }
+            }
+        }
+    }
+    .crud-card-body {
+        padding: 0.2rem 0.4rem 0 0.4rem;
+        table {
+            margin: 0;
+            tr:first-child {
+                >td {
+                    border-top:none!important;
+                }
+            }
+        }
+    }
+    .card-footer {
+        padding-bottom:0!important;
+    }
+    .crud-card-footer {
+        background-color:white;
+        border:none;
+        height:10px;
+        >div {
+        top:98%;
+        z-index: 6;
+        background-color:white;
+        left: 0;
+        right:0;
+        position: absolute;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 4px -2px lightgrey;
+        transition: max-height 0.2s ease-out;
+        padding: 0 0.4rem 0 0.4rem !important;
+        border-radius: 0 0 2px 2px;
+            >button {
+                margin-bottom:0.2rem;
+                // box-shadow: none !important;
+            }
+        }
+    }
+}
+

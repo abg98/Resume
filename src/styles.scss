@@ -1,1 +1,175 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+--standardGrey: rgb(190, 190, 190); 
+--textGrey: rgb(120, 120, 120); 
+--standardDarkBlue: #00326e;
+--standardLightBlue: rgb(58, 156, 255);
+}
+.pointer {
+    cursor:pointer;
+}
+html, body {
+    min-width: 100%!important;;
+    width:100%!important;
+    margin: 0;
+}
+.thick-border {
+    border: 3px solid black;
+    &.grey {
+        border-color: var(--standardGrey);
+    }
+    &.bottom {
+        border-left:none;
+        border-right:none;
+        border-top:none;
+    }
+    &.top {
+        border-left:none;
+        border-right:none;
+        border-bottom:none;
+    }
+    &.left {
+        border-bottom:none;
+        border-right:none;
+        border-top:none;
+    }
+    &.right {
+        border-left:none;
+        border-bottom:none;
+        border-top:none;
+    }
+}
+
+.t-grey {
+    color: var(--textGrey);
+}
+
+.font-weight-thin {
+    font-weight:300;
+}
+
+.dot{
+    font-size:9px;
+    &::before{
+        content:'\25CF';
+    }
+    &.grey {
+        color: var(--standardGrey); 
+    }
+}
+
+#overrides .modal-dialog {
+    width:300px;
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    
+    .modal-content {
+        border-radius:2px;
+        //height:250px;
+        min-height: 250px;
+        //max-height: 250px;
+        >div {
+            padding: 0.4rem 0.6rem;   
+        }
+        >form {
+            height:100%;
+            display: flex;
+            flex-flow: column;
+            >div {
+                padding: 0.4rem 0.6rem;
+                &.modal-body {
+                    flex: 1 1 auto;
+                }
+            }
+        }
+        .modal-header {
+            border: none;
+            text-transform: uppercase;
+            font-weight:600;
+            >div {
+                padding-bottom: 0.4rem;
+                width:100%;
+                border-bottom: 1px solid lightgray;
+            }
+        }
+        .modal-body {
+            border:none;
+            padding-bottom: 40px;
+            >div {
+                margin: 0 auto;
+            }
+            
+        }
+        .modal-footer {
+            &.sunk {
+                position: absolute;
+                bottom: 0;
+                left:0;
+                right:0;
+            }
+            border:none;
+            >div {
+                padding-top: 0.4rem;
+                width:100%;
+                border-top: 1px solid #333333;
+            }
+        }
+    }
+}
+
+.cap {
+    text-transform: uppercase;
+}
+
+.bill-table {
+    margin: 0;
+    tr:first-child {
+        >td {
+            border-top:none!important;
+        }
+    }
+}
+
+
+
+.radio-input {
+    display:inline-block;
+    margin: 4px 0.4rem;
+    input {
+        height:1.25rem;
+        width:1.25rem;
+        display: inline-block;
+    }
+    &.percentage {
+        input {
+            &::after {
+                position: relative;
+                top: -3px;
+                left: -15px;
+                content: '%';
+                color: var(--primary);
+                margin: 0 auto;
+                font-size: 14px;
+                font-weight:600;
+            }
+        }
+    }
+    &.dollar {
+        input {
+            &::after {
+                position: relative;
+                top: -3px;
+                left: -10px;
+                content: '$';
+                color: var(--primary);
+                margin: 0 auto;
+                font-size: 14px;
+                font-weight:600;
+            }
+        }
+    }
+}

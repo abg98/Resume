@@ -1,0 +1,23 @@
+<div class="card crud-card">
+    <div class="card-header crud-card-header">
+        {{header}}
+        <span class="icon-target" (click)="isOpen = !isOpen; toggleFooter()" #toggler>
+            <i class="fas fa-chevron-down" [class.open]="isOpen"></i>
+        </span>
+    </div>
+    <div class="card-body crud-card-body">
+        <ng-content select="[content]"></ng-content>
+    </div>
+    <div class="card-footer crud-card-footer" >
+        <div class="d-flex justify-content-between crud-card-toggler" [id]="id">
+            <button class="butn neutral" (click)="CRUD('edit')">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button class="butn negative" (click)="CRUD('delete')">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+

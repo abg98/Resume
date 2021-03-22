@@ -1,0 +1,25 @@
+.wholeRow {
+    height:25px;
+}
+.skillString {
+    word-wrap: none;
+    white-space: nowrap;
+    overflow-x:scroll;
+    //text-overflow: ellipsis;
+    margin-right:7px;
+}
+.skillRow {
+    white-space: nowrap;
+    >span {
+        height:10px;
+        display:inline-block;
+        position:relative;
+    &::before {
+        display: inline-block;
+        position: relative;
+        width: 10px;
+        height: 10px;
+        top: -1px;
+        left:0;
+    }}
+}

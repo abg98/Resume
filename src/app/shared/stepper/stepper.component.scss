@@ -1,0 +1,113 @@
+
+// .active {
+//     height: 25px;
+//     width: 25px;
+//     border-radius: 50%;
+//     display: inline-block;
+//     position:relative;
+//     background-color: white;
+//     border: solid var(--neutral) 8px;
+//   }
+// .inactive {
+//     height: 25px;
+//     width: 25px;
+//     border-radius: 50%;
+//     display: inline-block;
+//     background-color: white;
+//     border: solid lightgrey 8px;
+// }
+
+ul.stepper {
+    padding: 0 1.5rem;
+    // padding: 1.5rem;
+    // margin: 1em -1.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    counter-reset: section;
+    >li:not(:last-of-type) {
+        margin-bottom: .625rem;
+        -webkit-transition: margin-bottom .4s;
+        -o-transition: margin-bottom .4s;
+        transition: margin-bottom .4s;
+    }
+}
+.stepper-horizontal {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    >li:not(:last-of-type) {
+        margin-bottom: 0 !important;
+    }
+    >li:not(:last-child):after {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 1px;
+        margin: 0.5rem 0 0 0;
+        content: "";
+        background-color: rgba(0,0,0,0.1);
+    }
+    >li:not(:first-child):before {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 1px;
+        margin: 0.5rem 0 0 0;
+        content: "";
+        background-color: rgba(0,0,0,0.1);
+    }
+    li {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-transition: .5s;
+        transition: .5s;
+        a {
+            margin-top: 2.2rem;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            background-color: transparent;
+            position: relative;
+            .circle {
+                margin:0;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                display: inline-block;
+                position:relative;
+                background-color: white;
+                border: solid lightgrey 8px;
+                &.active {
+                    background-color: white;
+                    border: solid var(--neutral) 8px;
+                }
+            }
+            .label {
+                font-weight: 600;
+                color: rgba(0,0,0,0.87);
+                display: block;
+                color: rgba(0,0,0,0.38);
+                font-size: 13px;
+                // margin-top: .63rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

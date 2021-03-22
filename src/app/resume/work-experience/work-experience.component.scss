@@ -1,0 +1,46 @@
+@import '../../../styles.scss';
+.card {
+    border: none;
+    box-shadow: 0 0 12px lightgray;
+    .card-body {
+        padding: 0.3rem 0.3rem
+    }
+}
+ul {
+    margin-bottom: 0;
+    li {
+        list-style-type: none;
+        &.resp {
+            padding-left: 12px;
+            font-size: 13px;
+            font-weight:500;
+        }
+    }
+}
+.expo {
+    position: relative;
+}
+.timing {
+    position: absolute;
+    top:-20px;
+    left:-5px;
+    >.dot {
+        position: relative;
+        top:-15px;
+        left:-1px;
+    }
+    .font-weight-bolder{
+        font-size:12px;
+        font-weight: 600;
+        display: block;
+        margin-right: 0;
+        padding-right:0;
+        position: relative;
+        top:19px;
+        left:-44px;
+    }
+}
+.closer {
+    margin-top:-4px;
+    margin-bottom: 4px;
+}

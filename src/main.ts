@@ -3,10 +3,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { APP_CONFIG, AppConfigService } from './app/app.config';
 
-if (environment.production) {
-  enableProdMode();
-}
+const appConfigService = new AppConfigService();
+appConfigService.loadAppConfig().then(config => {
+  if (environment.production) {
+    enableProdMode();
+  }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  platformBrowserDynamic([{ provide: APP_CONFIG, useValue: config }])
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+});

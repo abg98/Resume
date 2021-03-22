@@ -1,0 +1,7 @@
+<div class="pl-2 d-flex justify-content-between wholeRow">
+    <span class="skillString">{{ skillsString }}</span>
+    <span class="skillRow" *ngIf="hasLevel">
+        <span *ngFor="let good of goodArray" class="dot"></span>
+        <span *ngFor="let bad of badArray" class="dot grey"></span>
+    </span>
+</div>

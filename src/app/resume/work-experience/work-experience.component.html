@@ -1,0 +1,32 @@
+<div class="thick-border grey left pb-2 expo" *ngIf="!site else siteCard">
+    <span class="timing">
+        <span class="font-weight-bolder">{{ data?.time.lower }}&nbsp;-</span>
+        <span class="font-weight-bolder">&nbsp;&nbsp;&nbsp;{{ data?.time.upper }}</span>
+        <span class="dot"></span>
+    </span>
+    <ul class="pl-4">
+        <li class="font-weight-bolder">{{ data?.title }}</li>
+        <li class="closer">{{ data?.company }}</li>
+        <li *ngFor="let resp of data?.job" class="resp t-grey">- {{ resp }}</li>
+    </ul>
+</div>
+<ng-template #siteCard>
+    <div class="thick-border grey left pb-2 expo">
+        <span class="timing">
+            <span class="font-weight-bolder">{{ data?.time.lower }}&nbsp;-</span>
+            <span class="font-weight-bolder">&nbsp;&nbsp;&nbsp;{{ data?.time.upper }}</span>
+            <span class="dot"></span>
+        </span>
+        <div class="pl-3" data-aos="fade-up">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="pl-2">
+                        <li class="font-weight-bolder">{{ data?.title }}</li>
+                        <li class="closer">{{ data?.company }}</li>
+                        <li *ngFor="let resp of data?.job" class="resp t-grey">- {{ resp }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

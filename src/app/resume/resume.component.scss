@@ -1,0 +1,66 @@
+.no-scroll {
+    overflow: hidden !important;
+}
+.siteRez {
+    .pl-5 {
+        padding-left: 3.1rem !important;
+    }
+}
+div {
+    &.name {
+        font-size:24px;
+        font-weight: 300;
+        margin-bottom: 0;
+        line-height: 1;
+    }
+    &.job {
+        font-size:22px;
+        font-weight: 300;
+        color: grey;
+        line-height: 1;
+    }
+    &.contact {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .img-wrapper {
+        height: 125px;
+        width:125px;
+        border-radius: 50%;
+        box-shadow: 0 0 12px grey;
+        overflow: hidden;
+        position: relative;
+        .me {
+            height: 500px;
+            box-shadow: 0 0 12px lightgrey;
+            position: absolute;
+            top: -40px;
+            left: -30px;
+        }
+    }
+    .shrink-mobile {
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .siteRez {
+        padding: 1rem 1rem;
+    }
+    .img-wrapper {
+        height: 200px;
+        width:200px;
+        border-radius: 50%;
+        box-shadow: 0 0 12px grey;
+        overflow: hidden;
+        position: relative;
+        .me {
+            height: 800px;
+            box-shadow: 0 0 12px lightgrey;
+            position: absolute;
+            top: -70px;
+            left: -40px;
+        }
+    }
+}
+// @media only screen and (min-width: 768px) {}

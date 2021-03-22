@@ -1,0 +1,107 @@
+:root {
+    --primary: #00326e!important;
+    --primary_trans: #00316e4d!important;
+    --primary_active: #002757!important;
+    --primary_trans_active: #00316e79!important;
+    --secondary: #aaaaaa !important;
+    --secondary_trans: #aaaaaa42 !important;
+    --secondary_active: #9b9b9b;
+    --secondary_trans_active: #aaaaaa9a !important;
+    --positive: #34db6c;
+    --positive_active: #2ebb5d;
+    --neutral: #3498db;
+    --neutral_active: #2980b9;
+    --negative: #db3434;
+    --negative_active: #bb2c2c;
+    }
+    .butn {
+        min-width: 72px;
+        width: 72px;
+        border: none;
+        font-size: inherit;
+        color: inherit;
+        background: none;
+        cursor: pointer;
+        padding: 0.3rem 0.5rem;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        outline: none;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        border-radius:2px;
+        box-shadow: 0 0 10px lightgrey;
+        &:active {
+            box-shadow: 0 0 5px lightgrey;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            font-weight:400;
+            z-index: -1;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+          }
+          >i.text{
+            margin-left:5px;
+          }
+          &.primary {
+            background: var(--primary);
+            color: #fff;
+            &:hover {
+                background: var(--primary_active);
+            }
+            &:active {
+                background: var(--primary_active);
+                top: 2px;
+            }
+          }          
+          &.neutral {
+            background: var(--neutral);
+            color: #fff;
+            &:hover {
+                background: var(--neutral_active);
+            }
+            &:active {
+                background: var(--neutral_active);
+                top: 2px;
+            }
+          }
+          &.positive {
+            background: var(--positive);
+            color: #fff;
+            &:hover {
+                background: var(--positive_active);
+            }
+            &:active {
+                background: var(--positive_active);
+                top: 2px;
+            }
+          }
+          &.negative {
+            background: var(--negative);
+            color: #fff;
+            &:hover {
+                background: var(--negative_active);
+            }
+            &:active {
+                background: var(--negative_active);
+                top: 2px;
+            }
+          }
+          &.secondary {
+            background: var(--secondary);
+            color: #fff;
+            &:hover {
+                background: var(--secondary_active);
+            }
+            &:active {
+                background: var(--secondary_active);
+                top: 2px;
+            }
+          }
+        }

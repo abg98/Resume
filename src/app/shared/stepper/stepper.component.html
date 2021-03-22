@@ -1,0 +1,23 @@
+<ul class="stepper stepper-horizontal">
+    <ng-container *ngFor="let route of routes">
+        <li>
+            <a (click)="routeTo(route?.route)">
+              <span class="circle" [ngClass]="{active: route?.isActive}"></span>
+              <span class="label">{{route?.name}}</span>
+            </a>
+          </li>
+    </ng-container>
+    
+    <!-- <li class="active">
+      <a href="#!">
+        <span class="circle">2</span>
+        <span class="label">Second step</span>
+      </a>
+    </li>
+    <li class="warning">
+      <a href="#!">
+        <span class="circle"><i class="fas fa-exclamation"></i></span>
+        <span class="label">Third step</span>
+      </a>
+    </li> -->
+  </ul>
