@@ -4,6 +4,7 @@ import { environment } from '../environments/environment';
 export class AppConfig {
   baseHref: string;
   apiUrl: string;
+  version: string;
 }
 
 export const APP_WINDOW = new InjectionToken<Window>('app.window');

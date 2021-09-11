@@ -10,7 +10,7 @@ appConfigService.loadAppConfig().then(config => {
   if (environment.production) {
     enableProdMode();
   }
-
+  
   platformBrowserDynamic([{ provide: APP_CONFIG, useValue: config }])
     .bootstrapModule(AppModule)
     .catch(err => console.error(err));

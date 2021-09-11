@@ -1,5 +1,6 @@
 {
     "baseHref": "/",
-    "apiUrl": "http://localhost:3000"
+    "apiUrl": "https://api.alecbgeibig.com",
+    "version": "v9.11"
   }
   

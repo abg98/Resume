@@ -1,5 +1,6 @@
 {
     "baseHref": "/",
-    "apiUrl": "https://api.alecbgeibig.com"
+    "apiUrl": "https://api.alecbgeibig.com",
+    "version": "v9.11"
   }
   
